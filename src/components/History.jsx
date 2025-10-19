@@ -18,10 +18,10 @@ function History({ setView, activeUser }) {
         <p>No previous tests yet.</p>
       ) : (
         <ul>
-          {attempts.map((a, i) => (
+          {attempts.map((attempt, i) => (
             <li key={i}>
-              <strong>{a.date}</strong>
-              <span className="score"> Score: {a.score}/10</span>
+              <strong>{attempt.date}</strong>
+              <span className="score"> Score: {attempt.score}/10</span>
             </li>
           ))}
         </ul>

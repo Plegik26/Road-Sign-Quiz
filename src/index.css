@@ -10,7 +10,7 @@ body {
   background: #f6f8fa;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* fill at least viewport height */
 }
 
 /* ===== Header & Footer ===== */
@@ -25,23 +25,24 @@ footer {
 
 header {
   padding: 1rem 0;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 12px 12px; /* round bottom corners */
 }
 
 footer {
   padding: 0.8rem 0;
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 0 0; /* round top corners */
   font-size: 0.9rem;
+  /* keep footer at bottom of screen */
   position: fixed;
   bottom: 0;
 }
 
 /* ===== Main content wrapper ===== */
 main {
-  flex: 1;
+  flex: 1; /* take up remaining space between header and footer */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* start content at top */
   padding: 2rem 0 4rem;
 }
 
@@ -60,6 +61,7 @@ main {
 }
 
 .quiz-box {
+  /* Make quiz box wider and max it at 90% */
   width: 500px;
   max-width: 90%;
 }
@@ -84,7 +86,7 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.97);
+  transform: scale(0.97); /* slight shrink on click */
 }
 
 /* ===== Quiz Section ===== */
@@ -94,29 +96,27 @@ button:active {
   align-items: center;
   text-align: center;
   margin-top: 1rem;
-  gap: 1rem;
+  gap: 1rem; /* space between each element */
 }
 
 .quiz-text {
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.4; /* improve readability with bigger spacing */
   padding: 0 0.5rem;
   max-width: 90%;
-  word-wrap: break-word;
+  word-wrap: break-word; /* prevent long text from overflowing */
 }
 
 .quiz-image {
   width: 150px;
   height: 150px;
-  object-fit: contain;
   border-radius: 8px;
 }
 
 /* ===== Answers ===== */
 .answers-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 12px; /* space between buttons */
   margin-top: 1.5rem;
 }
 
@@ -126,7 +126,6 @@ button:active {
   border: 1px solid #ccc;
   background: #f9f9f9;
   cursor: pointer;
-  transition: background 0.2s;
   width: 100%;
 }
 
@@ -136,9 +135,8 @@ button:active {
 
 .answers-grid button.selected {
   background: #007bff;
-  color: white;
   border-color: #007bff;
-  transition: all 0.2s ease;
+  color: white;
 }
 
 /* ===== Navigation Buttons ===== */
@@ -146,7 +144,7 @@ button:active {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1rem; /* space between buttons */
 }
 
 .quiz-nav button {
@@ -156,14 +154,13 @@ button:active {
   background: #007bff;
   color: white;
   cursor: pointer;
-  transition: background 0.2s;
-  width: auto;
 }
 
 .quiz-nav button:hover {
   background: #0056b3;
 }
 
+/* make text look like a link */
 .text-link {
   color: #007bff;
   cursor: pointer;

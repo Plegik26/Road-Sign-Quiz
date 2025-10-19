@@ -75,18 +75,18 @@ function Quiz({ setView, activeUser, setScore }) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     // create new array of users
-    const updatedUsers = users.map((u) => {
+    const updatedUsers = users.map((user) => {
       // if its the active user
-      if (u.username === activeUser) {
+      if (user.username === activeUser) {
         // add a new attempt with the current date and score
         const newAttempt = {
           score,
           date: new Date().toLocaleString(), // adds timestamp
         };
         // Return updated user data
-        return { ...u, attempts: [...u.attempts, newAttempt] };
+        return { ...user, attempts: [...user.attempts, newAttempt] };
       }
-      return u; // unchanged user
+      return user; // unchanged user
     });
     // save updated users array to local storage
     localStorage.setItem("users", JSON.stringify(updatedUsers));
