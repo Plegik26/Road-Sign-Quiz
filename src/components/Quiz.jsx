@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { questions } from "../data/questions";
 
 // Quiz component, receives setView to change which page is displayed
@@ -8,6 +8,12 @@ function Quiz({ setView, activeUser, setScore }) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(180);
+  const answersRef = useRef(answers);
+
+  // keep a ref in sync so timer callbacks can read latest answers
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
 
   // Timer logic
   useEffect(() => {
@@ -51,7 +57,7 @@ function Quiz({ setView, activeUser, setScore }) {
   const handleSubmit = () => {
     const correctCount = questions.reduce((acc, q, index) => {
       // If the user's answer for this question matches the correct answer, add 1 to the score
-      if (answers[index] === q.correct) {
+      if (answersRef.current[index] === q.correct) {
         return acc + 1;
       }
       return acc;
