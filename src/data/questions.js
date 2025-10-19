@@ -58,10 +58,10 @@ export const questions = [
     correct: "Motorway Begins",
   },
   {
-    question: "What roadsign is this?",
+    question: "What does this roadsign mean?",
     image: oneWay,
-    options: ["One Way", "No Entry", "Detour", "Keep Left"],
-    correct: "One Way Road",
+    options: ["One Way road", "Turn around and leave", "Detour", "Keep Left"],
+    correct: "One Way road",
   },
   {
     question: "What does this roadsign mean?",

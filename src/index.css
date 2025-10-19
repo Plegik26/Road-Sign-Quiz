@@ -6,12 +6,11 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: sans-serif, Arial, Helvetica;
   background: #f6f8fa;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  height: 100%;
 }
 
 /* ===== Header & Footer ===== */
@@ -27,13 +26,11 @@ footer {
 header {
   padding: 1rem 0;
   border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
   padding: 0.8rem 0;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
   position: fixed;
   bottom: 0;
@@ -45,14 +42,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
 }
 
 /* ===== Common Containers ===== */
 .auth-box,
-.quiz-box,
 .results-box,
-.homepage-container .quiz-box {
+.homepage-container,
+.quiz-box {
   background: white;
   padding: 2rem;
   border-radius: 12px;
@@ -79,19 +76,15 @@ button {
 }
 
 button {
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  background: #e6e6e6;
+  background: white;
 }
 
-button.selected,
-.answers-grid button.selected {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+button:active {
+  transform: scale(0.97);
 }
 
 /* ===== Quiz Section ===== */
@@ -139,6 +132,13 @@ button.selected,
 
 .answers-grid button:hover {
   background: #e9ecef;
+}
+
+.answers-grid button.selected {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  transition: all 0.2s ease;
 }
 
 /* ===== Navigation Buttons ===== */
